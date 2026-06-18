@@ -1,38 +1,254 @@
-.App {
+.app {
+  min-height: 100vh;
+  background: #f0f2f5;
+}
+
+.app-header {
+  background: linear-gradient(135deg, #1e3a5f 0%, #2d5a87 100%);
+  color: #fff;
+  padding: 2rem 1.5rem;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.app-header h1 {
+  margin: 0 0 0.5rem;
+  font-size: 2rem;
+  font-weight: 700;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.app-header p {
+  margin: 0;
+  opacity: 0.85;
+  font-size: 1rem;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.app-main {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+  display: grid;
+  gap: 1.5rem;
+}
+
+.panel {
+  background: #fff;
+  border-radius: 10px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.panel h2 {
+  margin: 0 0 1.25rem;
+  font-size: 1.25rem;
+  color: #1e3a5f;
+}
+
+/* Form */
+.bug-form {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  gap: 1rem;
 }
 
-.App-link {
-  color: #61dafb;
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.form-group label {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #444;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select,
+.search-bar input {
+  padding: 0.6rem 0.75rem;
+  border: 1px solid #d0d5dd;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  font-family: inherit;
+  transition: border-color 0.2s;
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus,
+.search-bar input:focus {
+  outline: none;
+  border-color: #2d5a87;
+  box-shadow: 0 0 0 3px rgba(45, 90, 135, 0.15);
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+/* Buttons */
+.btn {
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 600;
+  font-family: inherit;
+  transition: background 0.2s, transform 0.1s;
+}
+
+.btn:active {
+  transform: scale(0.98);
+}
+
+.btn-primary {
+  background: #2d5a87;
+  color: #fff;
+  padding: 0.7rem 1.25rem;
+  align-self: flex-start;
+}
+
+.btn-primary:hover {
+  background: #1e3a5f;
+}
+
+.btn-danger {
+  background: #dc3545;
+  color: #fff;
+}
+
+.btn-danger:hover {
+  background: #b02a37;
+}
+
+.btn-sm {
+  padding: 0.35rem 0.75rem;
+  font-size: 0.8rem;
+}
+
+/* Search */
+.list-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1.25rem;
+}
+
+.list-header h2 {
+  margin: 0;
+}
+
+.search-bar {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  min-width: 220px;
+}
+
+.search-bar label {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #444;
+}
+
+/* Table */
+.table-wrapper {
+  overflow-x: auto;
+}
+
+.bug-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+
+.bug-table th,
+.bug-table td {
+  padding: 0.75rem 1rem;
+  text-align: left;
+  border-bottom: 1px solid #e9ecef;
+}
+
+.bug-table th {
+  background: #f8f9fa;
+  font-weight: 600;
+  color: #444;
+  white-space: nowrap;
+}
+
+.bug-table tbody tr:hover {
+  background: #f8f9fa;
+}
+
+.description-cell {
+  max-width: 280px;
+  color: #555;
+}
+
+.empty-message {
+  text-align: center;
+  color: #888;
+  padding: 2rem;
+  margin: 0;
+}
+
+/* Badges */
+.priority,
+.status {
+  display: inline-block;
+  padding: 0.25rem 0.6rem;
+  border-radius: 20px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.priority-low {
+  background: #d4edda;
+  color: #155724;
+}
+
+.priority-medium {
+  background: #fff3cd;
+  color: #856404;
+}
+
+.priority-high {
+  background: #f8d7da;
+  color: #721c24;
+}
+
+.status-open {
+  background: #cce5ff;
+  color: #004085;
+}
+
+.status-in-progress {
+  background: #e2d5f5;
+  color: #4a2d7a;
+}
+
+.status-resolved {
+  background: #d4edda;
+  color: #155724;
+}
+
+@media (max-width: 600px) {
+  .form-row {
+    grid-template-columns: 1fr;
   }
-  to {
-    transform: rotate(360deg);
+
+  .list-header {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .search-bar {
+    min-width: unset;
   }
 }
