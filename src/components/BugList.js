@@ -10,8 +10,8 @@ function BugList({ bugs, onDelete }) {
       <table className="bug-table">
         <thead>
           <tr>
+            <th>ID</th>
             <th>Title</th>
-            <th>Description</th>
             <th>Priority</th>
             <th>Status</th>
             <th>Actions</th>

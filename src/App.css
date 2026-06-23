@@ -115,6 +115,15 @@
   background: #1e3a5f;
 }
 
+.btn-secondary {
+  background: #6c757d;
+  color: #fff;
+}
+
+.btn-secondary:hover {
+  background: #5a6268;
+}
+
 .btn-danger {
   background: #dc3545;
   color: #fff;

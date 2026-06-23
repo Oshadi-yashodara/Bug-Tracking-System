@@ -1,8 +1,8 @@
 import { render, screen } from '@testing-library/react';
 import App from './App';
 
-test('renders bug tracking system heading', () => {
+test('renders learn react link', () => {
   render(<App />);
-  const heading = screen.getByRole('heading', { name: /bug tracking system/i });
-  expect(heading).toBeInTheDocument();
+  const linkElement = screen.getByText(/learn react/i);
+  expect(linkElement).toBeInTheDocument();
 });
