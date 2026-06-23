@@ -25,6 +25,7 @@ function BugForm({ onAddBug }) {
       description: form.description.trim(),
       priority: form.priority,
       status: form.status,
+      createdDate: new Date().toISOString().split('T')[0],
     });
 
     setForm(INITIAL_FORM);

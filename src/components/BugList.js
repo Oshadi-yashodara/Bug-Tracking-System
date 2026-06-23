@@ -14,6 +14,7 @@ function BugList({ bugs, onDelete }) {
             <th>Title</th>
             <th>Priority</th>
             <th>Status</th>
+            <th>Date Created</th>
             <th>Actions</th>
           </tr>
         </thead>

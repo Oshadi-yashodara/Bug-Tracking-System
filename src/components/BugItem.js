@@ -12,6 +12,7 @@ function BugItem({ bug, onDelete }) {
       <td>
         <span className={statusClass}>{bug.status}</span>
       </td>
+      <td>{bug.createdDate}</td>
       <td className="action-cell">
         <button type="button" className="btn btn-secondary btn-sm">
           Edit
