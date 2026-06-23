@@ -20,6 +20,11 @@ function App() {
     bug.title.toLowerCase().includes(searchQuery.toLowerCase())
   );
 
+  const totalBugs = bugs.length;
+  const openBugs = bugs.filter((bug) => bug.status === 'Open').length;
+  const inProgressBugs = bugs.filter((bug) => bug.status === 'In Progress').length;
+  const resolvedBugs = bugs.filter((bug) => bug.status === 'Resolved').length;
+
   return (
     <div className="app">
       <header className="app-header">
@@ -28,6 +33,25 @@ function App() {
       </header>
 
       <main className="app-main">
+        <section className="dashboard-cards">
+          <div className="stat-card">
+            <span className="stat-label">Total Bugs</span>
+            <strong>{totalBugs}</strong>
+          </div>
+          <div className="stat-card">
+            <span className="stat-label">Open</span>
+            <strong>{openBugs}</strong>
+          </div>
+          <div className="stat-card">
+            <span className="stat-label">In Progress</span>
+            <strong>{inProgressBugs}</strong>
+          </div>
+          <div className="stat-card">
+            <span className="stat-label">Resolved</span>
+            <strong>{resolvedBugs}</strong>
+          </div>
+        </section>
+
         <section className="panel">
           <BugForm onAddBug={handleAddBug} />
         </section>
