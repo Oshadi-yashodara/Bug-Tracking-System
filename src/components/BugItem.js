@@ -10,7 +10,10 @@ function BugItem({ bug, onDelete }) {
         <span className={priorityClass}>{bug.priority}</span>
       </td>
       <td>
-        <span className={statusClass}>{bug.status}</span>
+        <span className={statusClass}>
+          <span className="status-dot" />
+          {bug.status}
+        </span>
       </td>
       <td>{bug.createdDate}</td>
       <td className="action-cell">

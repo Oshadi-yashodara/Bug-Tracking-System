@@ -261,18 +261,28 @@
 }
 
 .status-open {
-  background: #cce5ff;
-  color: #004085;
+  background: #ffe5e5;
+  color: #a00;
 }
 
 .status-in-progress {
-  background: #e2d5f5;
-  color: #4a2d7a;
+  background: #fff4cc;
+  color: #8a6d16;
 }
 
 .status-resolved {
-  background: #d4edda;
+  background: #e6f4ea;
   color: #155724;
+}
+
+.status-dot {
+  display: inline-block;
+  width: 0.65rem;
+  height: 0.65rem;
+  border-radius: 50%;
+  margin-right: 0.5rem;
+  vertical-align: middle;
+  background: currentColor;
 }
 
 @media (max-width: 600px) {
